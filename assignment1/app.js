@@ -10,7 +10,10 @@ function LunchCheckController($scope) {
   $scope.result = "";
 
   $scope.submit = function() {
-    if ($scope.dishes.split(",").length <= 3) {
+    if ($scope.dishes.length == 0) {
+      $scope.result = "Please enter data first";
+    }
+    else if ($scope.dishes.split(",").length <= 3) {
       $scope.result = "Enjoy!";
     }
     else {
